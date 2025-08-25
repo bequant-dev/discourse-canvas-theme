@@ -87,22 +87,33 @@ a[data-link-name="my-posts"] {
   visibility: visible !important;
 }
 
-/* Round the main thread container */
-.topic-list,
-.topic-list-body,
-.topic-list .topic-list-body,
-.topic-list .topic-list-item,
-.topic-list .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item {
+/* Round the main thread container table */
+.topic-list {
   border-radius: 16px !important;
   background-color: var(--highlight) !important;
   padding: 16px !important;
   margin: 8px !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ensure the table body also has rounded corners */
+.topic-list .topic-list-body {
+  border-radius: 16px !important;
+  background-color: var(--highlight) !important;
+}
+
+/* Round the table header */
+.topic-list .topic-list-header {
+  border-radius: 16px 16px 0 0 !important;
+  background-color: var(--highlight) !important;
+}
+
+/* Round the table body */
+.topic-list .topic-list-body {
+  border-radius: 0 0 16px 16px !important;
+  background-color: var(--highlight) !important;
 }
 
 /* Remove grey gradient hue at bottom */

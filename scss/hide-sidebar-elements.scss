@@ -87,6 +87,24 @@ a[data-link-name="my-posts"] {
   visibility: visible !important;
 }
 
+/* Round the main thread container */
+.topic-list,
+.topic-list-body,
+.topic-list .topic-list-body,
+.topic-list .topic-list-item,
+.topic-list .topic-list-item .topic-list-item,
+.topic-list .topic-list-item .topic-list-item .topic-list-item,
+.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
+.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
+.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
+.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
+.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item {
+  border-radius: 16px !important;
+  background-color: var(--highlight) !important;
+  padding: 16px !important;
+  margin: 8px !important;
+}
+
 /* Remove grey gradient hue at bottom */
 .sidebar::after,
 .sidebar::before,

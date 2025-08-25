@@ -51,6 +51,15 @@
   display: none !important;
 }
 
+/* Hide "My Comments" button from sidebar */
+.sidebar-section-link-wrapper[data-list-item-name="my-posts"],
+li[data-list-item-name="my-posts"],
+.sidebar-section-link[data-link-name="my-posts"],
+a[data-link-name="my-posts"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 /* Hide hamburger menu and move sidebar to the left */
 .header-sidebar-toggle,
 .header-sidebar-toggle .btn-sidebar-toggle,

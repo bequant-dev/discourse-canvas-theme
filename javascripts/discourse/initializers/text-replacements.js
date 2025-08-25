@@ -33,15 +33,15 @@ export default {
           let text = textNode.textContent;
           let originalText = text;
 
-          // Replace "Topic" with "Post" (case-sensitive)
-          text = text.replace(/\bTopic\b/g, "Post");
-          text = text.replace(/\btopic\b/g, "post");
-          text = text.replace(/\bTOPIC\b/g, "POST");
+          // Replace "Topic" with "Thread" (case-sensitive)
+          text = text.replace(/\bTopic\b/g, "Thread");
+          text = text.replace(/\btopic\b/g, "thread");
+          text = text.replace(/\bTOPIC\b/g, "THREAD");
 
-          // Replace "Topics" with "Posts" (case-sensitive)
-          text = text.replace(/\bTopics\b/g, "Posts");
-          text = text.replace(/\btopics\b/g, "posts");
-          text = text.replace(/\bTOPICS\b/g, "POSTS");
+          // Replace "Topics" with "Threads" (case-sensitive)
+          text = text.replace(/\bTopics\b/g, "Threads");
+          text = text.replace(/\btopics\b/g, "threads");
+          text = text.replace(/\bTOPICS\b/g, "THREADS");
 
           // Replace "Post" with "Comment" (but be careful not to replace our new "Post" text)
           // We need to be more specific to avoid double replacements

@@ -16,6 +16,12 @@
 .home-logo-wrapper-outlet #site-logo {
   display: none !important;
   visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
 }
 
 /* Create BeQuant text logo */
@@ -69,8 +75,22 @@
 }
 
 /* Ensure logo links are clickable */
-.home-logo-wrapper-outlet .title a[href="/"],
-.header .title a[href="/"] {
+.home-logo-wrapper-outlet .title a,
+.header .title a {
   pointer-events: auto !important;
   cursor: pointer !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 10 !important;
+  text-decoration: none !important;
+}
+
+/* Make sure the link area is properly sized */
+.home-logo-wrapper-outlet .title a,
+.header .title a {
+  min-height: 40px !important;
+  min-width: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
 } 

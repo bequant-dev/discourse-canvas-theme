@@ -87,34 +87,6 @@ a[data-link-name="my-posts"] {
   visibility: visible !important;
 }
 
-/* Make thread boxes rounded */
-.topic-list .topic-list-item,
-.topic-list .topic-list-item .main-link,
-.topic-list .topic-list-item .topic-list-data,
-.topic-list .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item,
-.topic-list .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item .topic-list-item {
-  border-radius: 12px !important;
-  border: 1px solid var(--primary-low) !important;
-  margin-bottom: 8px !important;
-  padding: 12px !important;
-  background-color: var(--highlight) !important;
-}
-
-/* Hover effect for thread boxes */
-.topic-list .topic-list-item:hover,
-.topic-list .topic-list-item .main-link:hover,
-.topic-list .topic-list-item .topic-list-data:hover {
-  background-color: var(--hover) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  transition: all 0.2s ease !important;
-}
-
 /* Remove grey gradient hue at bottom */
 .sidebar::after,
 .sidebar::before,

@@ -1,0 +1,53 @@
+{
+  "name": "BeQuant Forum Theme",
+  "component": false,
+  "about": "Custom BeQuant forum theme with terminology changes (Topics→Posts, Posts→Comments, Categories→Rooms) and Material Design styling",
+  "version": "1.0.0",
+  "authors": "BeQuant Team",
+  "theme_version": 1,
+  "minimum_discourse_version": "3.0.0",
+  "id": "bequant-forum-theme-v1",
+  "about_url": "https://github.com/bequant-dev/bequant-discourse-theme",
+  "about_url_text": "BeQuant Forum Theme",
+  "license_url": "https://github.com/bequant-dev/bequant-discourse-theme/blob/main/LICENSE",
+  "learn_more": "https://github.com/bequant-dev/bequant-discourse-theme",
+  "components": [
+    "https://github.com/jordanvidrine/discourse-category-group-boxes.git",
+    "https://github.com/discourse/discourse-clickable-topic.git",
+    "https://github.com/discourse/discourse-search-banner.git"
+  ],
+  "modifiers": {
+    "serialize_topic_excerpts": true
+  },
+  "color_schemes": {
+    "bequant-light": {
+      "primary": "212121",
+      "secondary": "fafafa",
+      "tertiary": "1976d2",
+      "quaternary": "757575",
+      "header_background": "ffffff",
+      "header_primary": "1976d2",
+      "highlight": "1976d2",
+      "danger": "d32f2f",
+      "success": "388e3c",
+      "love": "c16ad7",
+      "selected": "e3f2fd",
+      "hover": "f5f5f5"
+    },
+    "bequant-dark": {
+      "primary": "f9fafb",
+      "secondary": "0f172a",
+      "tertiary": "38bdf8",
+      "quaternary": "9ca3af",
+      "header_background": "1f2937",
+      "header_primary": "38bdf8",
+      "highlight": "38bdf8",
+      "danger": "ef4444",
+      "success": "22c55e",
+      "love": "c16ad7",
+      "selected": "1e3a8a",
+      "hover": "374151"
+    }
+  },
+  "screenshots": ["screenshots/light.png", "screenshots/dark.png"]
+}

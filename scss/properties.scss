@@ -96,28 +96,28 @@
   --hover: #1f2937; /* Gray-800 - bg-gray-800 */
 }
 
-/* BeQuant Light Mode Colors - Exact Match */
+/* BeQuant Light Mode Colors - Fixed Palette */
 [data-theme="light"] {
   /* Primary - Most text, icons, and borders */
-  --primary: #111827; /* Gray-900 - text-gray-900 */
+  --primary: #111827; /* Gray-900 - Dark text for light background */
   
   /* Secondary - Main background color */
-  --secondary: #f9fafb; /* Gray-50 - bg-gray-50 */
+  --secondary: #ffffff; /* White - Clean white background */
   
-  /* Tertiary - Links, buttons, notifications, accent color */
-  --tertiary: #2563eb; /* Indigo-600 - BeQuant primary blue */
+  /* Tertiary - Links, buttons, notifications, and accent color */
+  --tertiary: #2563eb; /* Indigo-600 - BeQuant blue for buttons and links */
   
   /* Quaternary - Optional use */
-  --quaternary: #d1d5db; /* Gray-300 - border-gray-300 */
+  --quaternary: #374151; /* Gray-700 - Darker borders and secondary text */
   
   /* Header background */
-  --header_background: #ffffff; /* White - bg-white */
+  --header_background: #ffffff; /* White - Clean header */
   
   /* Header primary - Text and icons in header */
-  --header_primary: #111827; /* Gray-900 - text-gray-900 */
+  --header_primary: #111827; /* Gray-900 - Dark text in header */
   
   /* Highlight - Background of highlighted elements */
-  --highlight: #ffffff; /* White - bg-white */
+  --highlight: #f9fafb; /* Gray-50 - Light highlight for cards/panels */
   
   /* Danger - Delete actions */
   --danger: #dc2626; /* Red-600 */
@@ -129,8 +129,8 @@
   --love: #d97706; /* Amber-600 */
   
   /* Selected - Active/selected elements */
-  --selected: #2563eb; /* Indigo-600 - BeQuant primary blue */
+  --selected: #2563eb; /* Indigo-600 - BeQuant blue for active states */
   
   /* Hover - Hovered elements */
-  --hover: #f3f4f6; /* Gray-100 - bg-gray-100 */
+  --hover: #f3f4f6; /* Gray-100 - Light hover state */
 }

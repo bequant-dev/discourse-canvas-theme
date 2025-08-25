@@ -8,13 +8,19 @@
 .header .title img,
 .header .title svg,
 .header .logo .d-icon,
-.header .title .d-icon {
+.header .title .d-icon,
+#site-logo,
+.logo-big,
+.home-logo-wrapper-outlet img,
+.home-logo-wrapper-outlet .logo-big,
+.home-logo-wrapper-outlet #site-logo {
   display: none !important;
   visibility: hidden !important;
 }
 
 /* Create BeQuant text logo */
-.header .title::before {
+.header .title::before,
+.home-logo-wrapper-outlet .title::before {
   content: "BeQuant";
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.5rem;

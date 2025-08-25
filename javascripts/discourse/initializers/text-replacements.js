@@ -4,6 +4,68 @@ export default {
   name: "text-replacements",
   initialize() {
     withPluginApi("0.8.31", api => {
+      // Function to check if a node is within user-generated content
+      function isUserGeneratedContent(node) {
+        // Check if the node or any of its parents have classes that indicate user content
+        let currentElement = node.parentElement;
+        
+        while (currentElement && currentElement !== document.body) {
+          const className = currentElement.className || '';
+          const classList = currentElement.classList;
+          
+          // User-generated content classes to exclude
+          const userContentClasses = [
+            'cooked',           // Post content
+            'post',             // Individual posts
+            'topic-body',       // Topic body content
+            'topic-title',      // Topic titles
+            'title',            // General titles (but be careful)
+            'topic-list-item',  // Topic list items (user-created topics)
+            'category-box',     // Category descriptions
+            'topic-excerpt',    // Topic excerpts
+            'post-message',     // Post messages
+            'crawler-link',     // Crawler links
+            'topic-category',   // Topic categories
+            'topic-meta-data',  // Topic metadata
+            'topic-list',       // Topic list (contains user content)
+            'topic-list-body',  // Topic list body
+            'topic-list-item',  // Individual topic items
+            'link-top-line',    // Topic link top line
+            'link-bottom-line', // Topic link bottom line
+            'badge-category',   // Category badges
+            'topic-statuses',   // Topic statuses
+            'topic-post-badges' // Topic post badges
+          ];
+          
+          // Check if any of the user content classes are present
+          for (const userClass of userContentClasses) {
+            if (classList.contains(userClass)) {
+              return true;
+            }
+          }
+          
+          // Check for data attributes that indicate user content
+          if (currentElement.hasAttribute('data-topic-id') || 
+              currentElement.hasAttribute('data-post-id') ||
+              currentElement.hasAttribute('data-user-id')) {
+            return true;
+          }
+          
+          // Check for specific IDs that contain user content
+          const id = currentElement.id || '';
+          if (id.includes('post_') || 
+              id.includes('topic_') || 
+              id.includes('user_') ||
+              id.includes('ember')) {
+            return true;
+          }
+          
+          currentElement = currentElement.parentElement;
+        }
+        
+        return false;
+      }
+
       // Function to perform text replacements
       function replaceText() {
         // Get all text nodes in the document
@@ -17,6 +79,12 @@ export default {
                   node.parentElement.tagName === 'STYLE') {
                 return NodeFilter.FILTER_REJECT;
               }
+              
+              // Skip user-generated content
+              if (isUserGeneratedContent(node)) {
+                return NodeFilter.FILTER_REJECT;
+              }
+              
               return NodeFilter.FILTER_ACCEPT;
             }
           }

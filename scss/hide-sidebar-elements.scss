@@ -29,6 +29,14 @@
   visibility: hidden !important;
 }
 
+/* Hide the entire footer wrapper with gradient and buttons */
+.sidebar-footer-wrapper,
+.sidebar-footer-container,
+.sidebar-footer-actions {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 /* Hide any other bottom sidebar elements */
 .sidebar .sidebar-section:last-child,
 .sidebar .sidebar-section-wrapper:last-child,

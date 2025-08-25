@@ -72,29 +72,10 @@
   visibility: hidden !important;
 }
 
-/* Move sidebar all the way to the left */
+/* Keep sidebar in its natural position - just ensure it's always visible */
 .sidebar {
-  left: 0 !important;
-  transform: none !important;
-  margin-left: 0 !important;
-}
-
-/* Ensure sidebar is always visible */
-.sidebar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  height: 100vh !important;
-  z-index: 1000 !important;
-}
-
-/* Adjust main content to account for sidebar */
-.main-content,
-.content-wrapper,
-#main-outlet,
-.outlet {
-  margin-left: 260px !important; /* Adjust based on your sidebar width */
-  padding-left: 0 !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 /* Remove grey gradient hue at bottom */

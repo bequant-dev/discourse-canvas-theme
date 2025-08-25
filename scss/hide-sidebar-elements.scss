@@ -51,6 +51,52 @@
   display: none !important;
 }
 
+/* Hide hamburger menu and move sidebar to the left */
+.header-sidebar-toggle,
+.header-sidebar-toggle .btn-sidebar-toggle,
+.header-sidebar-toggle .btn,
+.header-sidebar-toggle button,
+.header-sidebar-toggle-btn,
+.header-sidebar-toggle-button,
+.header .sidebar-toggle,
+.header .sidebar-toggle-btn,
+.header .sidebar-toggle-button,
+.header .hamburger-menu,
+.header .menu-toggle,
+.header .sidebar-menu-toggle,
+[data-sidebar-toggle],
+[data-toggle="sidebar"],
+.header .btn.sidebar-toggle,
+.header .btn[data-sidebar-toggle] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Move sidebar all the way to the left */
+.sidebar {
+  left: 0 !important;
+  transform: none !important;
+  margin-left: 0 !important;
+}
+
+/* Ensure sidebar is always visible */
+.sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 100vh !important;
+  z-index: 1000 !important;
+}
+
+/* Adjust main content to account for sidebar */
+.main-content,
+.content-wrapper,
+#main-outlet,
+.outlet {
+  margin-left: 260px !important; /* Adjust based on your sidebar width */
+  padding-left: 0 !important;
+}
+
 /* Remove grey gradient hue at bottom */
 .sidebar::after,
 .sidebar::before,

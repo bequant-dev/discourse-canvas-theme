@@ -13,17 +13,11 @@
     color: var(--primary);
   }
 
-           /* Header - Match BeQuant styling */
-         .header {
-           background-color: var(--header_background);
-           color: var(--header_primary);
-           height: 3.5rem;
-           padding: 0.5rem 1rem;
-           border-bottom: 1px solid var(--quaternary);
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
-         }
+  /* Header */
+  .header {
+    background-color: var(--header_background);
+    color: var(--header_primary);
+  }
 
   /* Navigation */
   .nav-pills {
@@ -322,17 +316,12 @@
     color: var(--primary) !important;
   }
 
-           /* Header - Match BeQuant styling */
-         .header {
-           background-color: var(--header_background);
-           color: var(--header_primary);
-           height: 3.5rem;
-           padding: 0.5rem 1rem;
-           border-bottom: 1px solid var(--quaternary);
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
-         }
+  /* Header */
+  .header {
+    background-color: var(--header_background);
+    color: var(--header_primary);
+    border-bottom: 1px solid var(--quaternary);
+  }
 
   /* Navigation */
   .nav-pills {

@@ -23,11 +23,11 @@
   --canvas-button-padding: 0.5em 0.65em;
   --canvas-button-primary-padding: 0.5em 0.65em;
 
-  /* Header */
-  --canvas-header-height: 4rem;
-  --canvas-header-background: var(--header_background);
-  --canvas-header-border: none;
-  --canvas-header-shadow: var(--shadow-header);
+           /* Header */
+         --canvas-header-height: 3.5rem; /* Match BeQuant header height */
+         --canvas-header-background: var(--header_background);
+         --canvas-header-border: 1px solid var(--quaternary);
+         --canvas-header-shadow: none;
 
   /* Sidebar */
   --d-sidebar-width: 17em;

@@ -18,8 +18,8 @@ export default {
           // Add title for accessibility
           link.title = "Go to BeQuant.dev";
           
-          // Replace the content with BeQuant text
-          link.innerHTML = '<span style="font-family: Inter, -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, sans-serif; font-size: 1.5rem; font-weight: 700; color: #2563eb; letter-spacing: -0.025em;">BeQuant</span>';
+                         // Replace the content with BeQuant text - match BeQuant app styling
+               link.innerHTML = '<span style="font-family: Inter, -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, sans-serif; font-size: 1.125rem; font-weight: 700; color: #2563eb; letter-spacing: -0.025em;">BeQuant</span>';
           
                       // Add click event listener as backup (only once)
             if (!link.hasAttribute('data-bequant-redirect-added')) {

@@ -1,0 +1,70 @@
+/* Hide sidebar elements */
+
+/* Hide keyboard shortcuts */
+.keyboard-shortcuts,
+.keyboard-shortcuts-link,
+.sidebar .keyboard-shortcuts,
+.sidebar .keyboard-shortcuts-link,
+[data-shortcut="?"],
+[data-shortcut="keyboard"],
+.keyboard-shortcuts-button {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide plus icon/composer button */
+.composer-button,
+.composer-btn,
+.quick-reply-button,
+.quick-reply-btn,
+.sidebar .composer-button,
+.sidebar .composer-btn,
+.sidebar .quick-reply-button,
+.sidebar .quick-reply-btn,
+[data-shortcut="c"],
+[data-shortcut="composer"],
+.composer-shortcut,
+.quick-reply-shortcut {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide any other bottom sidebar elements */
+.sidebar .sidebar-section:last-child,
+.sidebar .sidebar-section-wrapper:last-child,
+.sidebar .sidebar-section-content:last-child {
+  display: none !important;
+}
+
+/* Alternative selectors for keyboard shortcuts */
+.sidebar .sidebar-section[data-section-name="keyboard-shortcuts"],
+.sidebar .sidebar-section[data-section-name="shortcuts"],
+.sidebar .sidebar-section[data-section-name="composer"] {
+  display: none !important;
+}
+
+/* Remove grey gradient hue at bottom */
+.sidebar::after,
+.sidebar::before,
+.sidebar .sidebar-gradient,
+.sidebar .sidebar-bottom-gradient,
+.sidebar .sidebar-footer-gradient,
+.sidebar .sidebar-section:last-child::before,
+.sidebar .sidebar-section:last-child::after,
+.sidebar .sidebar-section-wrapper:last-child::before,
+.sidebar .sidebar-section-wrapper:last-child::after {
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Remove any gradient backgrounds from sidebar bottom */
+.sidebar {
+  background: var(--secondary) !important;
+}
+
+.sidebar .sidebar-section:last-child,
+.sidebar .sidebar-section-wrapper:last-child {
+  background: none !important;
+  background-image: none !important;
+} 

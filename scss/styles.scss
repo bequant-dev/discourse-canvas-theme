@@ -2,6 +2,7 @@
 
 /* Import properties */
 @import "properties";
+@import "light-mode-overrides";
 
 /* Dark Mode Overrides */
 [data-theme="dark"] {
@@ -302,6 +303,16 @@
   body {
     background-color: var(--secondary);
     color: var(--primary);
+  }
+
+  /* Ensure all text is properly colored in light mode */
+  * {
+    color: inherit;
+  }
+
+  /* Force dark text on light backgrounds */
+  h1, h2, h3, h4, h5, h6, p, span, div, a {
+    color: var(--primary) !important;
   }
 
   /* Header */

@@ -55,4 +55,22 @@
 .header .title span,
 .header .title a {
   display: none !important;
+}
+
+/* Redirect BeQuant logo to bequant.dev */
+.home-logo-wrapper-outlet .title a,
+.header .title a {
+  pointer-events: auto !important;
+}
+
+.home-logo-wrapper-outlet .title a[href="/"],
+.header .title a[href="/"] {
+  pointer-events: auto !important;
+}
+
+/* Ensure logo links are clickable */
+.home-logo-wrapper-outlet .title a[href="/"],
+.header .title a[href="/"] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
 } 

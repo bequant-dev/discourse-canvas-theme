@@ -5,24 +5,35 @@
 @import "hide-sidebar-elements";
 @import "bequant-logo";
 
-/* Dark Mode Overrides */
-[data-theme="dark"] {
-  /* Global Background */
-  body {
-    background-color: var(--secondary);
-    color: var(--primary);
-  }
+       /* Dark Mode Overrides */
+       [data-theme="dark"] {
+         /* Global Background */
+         body {
+           background-color: var(--secondary);
+           color: var(--primary);
+         }
 
-           /* Header - Match BeQuant styling */
-         .header {
+         /* Header - Match BeQuant styling */
+         .d-header {
            background-color: var(--header_background);
            color: var(--header_primary);
-           height: 3.5rem;
-           padding: 0.5rem 1rem;
+           height: 3.5rem !important;
+           min-height: 3.5rem !important;
            border-bottom: 1px solid var(--quaternary);
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
+         }
+
+         .d-header .wrap {
+           height: 3.5rem !important;
+           min-height: 3.5rem !important;
+         }
+
+         .d-header .contents {
+           height: 3.5rem !important;
+           min-height: 3.5rem !important;
+           padding: 0.5rem 1rem !important;
+           display: flex !important;
+           align-items: center !important;
+           justify-content: space-between !important;
          }
 
   /* Navigation */
@@ -323,15 +334,26 @@
   }
 
            /* Header - Match BeQuant styling */
-         .header {
+         .d-header {
            background-color: var(--header_background);
            color: var(--header_primary);
-           height: 3.5rem;
-           padding: 0.5rem 1rem;
+           height: 3.5rem !important;
+           min-height: 3.5rem !important;
            border-bottom: 1px solid var(--quaternary);
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
+         }
+
+         .d-header .wrap {
+           height: 3.5rem !important;
+           min-height: 3.5rem !important;
+         }
+
+         .d-header .contents {
+           height: 3.5rem !important;
+           min-height: 3.5rem !important;
+           padding: 0.5rem 1rem !important;
+           display: flex !important;
+           align-items: center !important;
+           justify-content: space-between !important;
          }
 
   /* Navigation */

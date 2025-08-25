@@ -10,31 +10,22 @@ export default {
         let currentElement = node.parentElement;
         
         while (currentElement && currentElement !== document.body) {
-          const className = currentElement.className || '';
           const classList = currentElement.classList;
           
-          // User-generated content classes to exclude
+          // Only exclude actual user content, not UI elements
           const userContentClasses = [
-            'cooked',           // Post content
-            'post',             // Individual posts
-            'topic-body',       // Topic body content
-            'topic-title',      // Topic titles
-            'title',            // General titles (but be careful)
-            'topic-list-item',  // Topic list items (user-created topics)
-            'category-box',     // Category descriptions
-            'topic-excerpt',    // Topic excerpts
-            'post-message',     // Post messages
-            'crawler-link',     // Crawler links
-            'topic-category',   // Topic categories
-            'topic-meta-data',  // Topic metadata
-            'topic-list',       // Topic list (contains user content)
-            'topic-list-body',  // Topic list body
-            'topic-list-item',  // Individual topic items
-            'link-top-line',    // Topic link top line
-            'link-bottom-line', // Topic link bottom line
-            'badge-category',   // Category badges
-            'topic-statuses',   // Topic statuses
-            'topic-post-badges' // Topic post badges
+            'cooked',           // Post content (user-written)
+            'post',             // Individual posts (user content)
+            'topic-body',       // Topic body content (user-written)
+            'topic-excerpt',    // Topic excerpts (user-written)
+            'post-message',     // Post messages (user-written)
+            'category-box-inner', // Category descriptions (user-written)
+            'topic-category',   // Topic categories (user-created)
+            'topic-meta-data',  // Topic metadata (user-created)
+            'link-top-line',    // Topic link top line (user titles)
+            'link-bottom-line', // Topic link bottom line (user content)
+            'badge-category__name', // Category names (user-created)
+            'topic-post-badges' // Topic post badges (user-created)
           ];
           
           // Check if any of the user content classes are present
@@ -44,10 +35,9 @@ export default {
             }
           }
           
-          // Check for data attributes that indicate user content
-          if (currentElement.hasAttribute('data-topic-id') || 
-              currentElement.hasAttribute('data-post-id') ||
-              currentElement.hasAttribute('data-user-id')) {
+          // Check for specific data attributes that indicate user content
+          if (currentElement.hasAttribute('data-topic-id') && 
+              (classList.contains('topic-list-item') || classList.contains('link-top-line'))) {
             return true;
           }
           
@@ -55,8 +45,7 @@ export default {
           const id = currentElement.id || '';
           if (id.includes('post_') || 
               id.includes('topic_') || 
-              id.includes('user_') ||
-              id.includes('ember')) {
+              id.includes('user_')) {
             return true;
           }
           

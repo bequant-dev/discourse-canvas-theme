@@ -81,6 +81,7 @@ export default {
           transition: all 0.2s ease;
           margin-left: 8px;
           cursor: pointer;
+          z-index: 1000;
         `;
         
         button.innerHTML = `
@@ -107,18 +108,68 @@ export default {
           button.style.borderColor = 'var(--quaternary)';
         });
 
-        // Try to find header buttons container
-        const headerButtons = document.querySelector('.header-buttons') || 
-                             document.querySelector('.header .buttons') ||
-                             document.querySelector('.header .header-buttons');
+        // More comprehensive header button placement
+        const possibleSelectors = [
+          '.header-buttons',
+          '.header .buttons',
+          '.header .header-buttons',
+          '.header .header-buttons .buttons',
+          '.header .header-buttons .header-buttons',
+          '.header .header-buttons .header-buttons .buttons',
+          '.header .header-buttons .header-buttons .header-buttons',
+          '.header .header-buttons .header-buttons .header-buttons .buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons',
+          '.header .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .header-buttons .buttons'
+        ];
+
+        let headerButtons = null;
+        for (const selector of possibleSelectors) {
+          headerButtons = document.querySelector(selector);
+          if (headerButtons) {
+            console.log('Found header buttons container:', selector);
+            break;
+          }
+        }
         
         if (headerButtons) {
           headerButtons.appendChild(button);
+          console.log('Theme toggle button added to header');
         } else {
-          // Fallback: add to header
-          const header = document.querySelector('.header') || document.querySelector('header');
+          // Fallback: try to find any header element and add the button
+          const header = document.querySelector('.header') || 
+                        document.querySelector('header') || 
+                        document.querySelector('[data-header]') ||
+                        document.querySelector('.d-header') ||
+                        document.querySelector('.header-wrapper');
+          
           if (header) {
-            header.appendChild(button);
+            // Create a container for the button if needed
+            let buttonContainer = header.querySelector('.theme-toggle-container');
+            if (!buttonContainer) {
+              buttonContainer = document.createElement('div');
+              buttonContainer.className = 'theme-toggle-container';
+              buttonContainer.style.cssText = `
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                margin-right: 10px;
+              `;
+              header.appendChild(buttonContainer);
+            }
+            buttonContainer.appendChild(button);
+            console.log('Theme toggle button added to header fallback');
+          } else {
+            console.log('Could not find header element for theme toggle button');
           }
         }
       }
@@ -132,11 +183,21 @@ export default {
           applyLightTheme();
         }
         
-        // Small delay to ensure DOM is ready
+        // Multiple attempts to ensure button appears
         setTimeout(() => {
           createThemeToggleButton();
           updateThemeToggleButton();
         }, 100);
+        
+        setTimeout(() => {
+          createThemeToggleButton();
+          updateThemeToggleButton();
+        }, 500);
+        
+        setTimeout(() => {
+          createThemeToggleButton();
+          updateThemeToggleButton();
+        }, 1000);
       });
 
       // Also run on initial load
@@ -145,12 +206,41 @@ export default {
           createThemeToggleButton();
           updateThemeToggleButton();
         }, 100);
+        
+        setTimeout(() => {
+          createThemeToggleButton();
+          updateThemeToggleButton();
+        }, 500);
       });
 
       // Apply dark theme by default if no preference is set
       if (!localStorage.getItem('discourse-theme')) {
         applyDarkTheme();
       }
+
+      // Additional attempts on DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(() => {
+            createThemeToggleButton();
+            updateThemeToggleButton();
+          }, 100);
+        });
+      } else {
+        setTimeout(() => {
+          createThemeToggleButton();
+          updateThemeToggleButton();
+        }, 100);
+      }
+
+      // Periodic check to ensure button exists
+      setInterval(() => {
+        if (!document.getElementById('theme-toggle-button')) {
+          console.log('Theme toggle button not found, attempting to create...');
+          createThemeToggleButton();
+          updateThemeToggleButton();
+        }
+      }, 2000);
     });
   }
 }; 

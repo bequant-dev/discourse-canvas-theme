@@ -1,4 +1,4 @@
-/* BeQuant Discourse Theme - Simple Dark Mode */
+/* BeQuant Discourse Theme - Simple Dark & Light Mode */
 
 /* Import properties */
 @import "properties";
@@ -227,6 +227,300 @@
   .search-input:focus {
     border-color: var(--tertiary);
     box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+  }
+
+  /* Dropdowns */
+  .dropdown-menu {
+    background-color: var(--highlight);
+    border: 1px solid var(--quaternary);
+    border-radius: 8px;
+  }
+
+  .dropdown-menu .dropdown-item {
+    color: var(--primary);
+  }
+
+  .dropdown-menu .dropdown-item:hover {
+    background-color: var(--hover);
+    color: var(--primary);
+  }
+
+  /* Modal */
+  .modal {
+    background-color: var(--highlight);
+    border: 1px solid var(--quaternary);
+    border-radius: 12px;
+  }
+
+  .modal .modal-header {
+    border-bottom: 1px solid var(--quaternary);
+  }
+
+  .modal .modal-body {
+    color: var(--primary);
+  }
+
+  .modal .modal-footer {
+    border-top: 1px solid var(--quaternary);
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--secondary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--quaternary);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--tertiary);
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: var(--selected);
+    color: white;
+  }
+
+  /* Focus outlines */
+  *:focus {
+    outline: 2px solid var(--tertiary);
+    outline-offset: 2px;
+  }
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] {
+  /* Global Background */
+  body {
+    background-color: var(--secondary);
+    color: var(--primary);
+  }
+
+  /* Header */
+  .header {
+    background-color: var(--header_background);
+    color: var(--header_primary);
+    border-bottom: 1px solid var(--quaternary);
+  }
+
+  /* Navigation */
+  .nav-pills {
+    background-color: var(--highlight);
+  }
+
+  .nav-pills .nav-pills-dropdown {
+    background-color: var(--highlight);
+  }
+
+  .nav-pills .nav-pills-dropdown .nav-pills-dropdown-content a {
+    color: var(--primary);
+  }
+
+  .nav-pills .nav-pills-dropdown .nav-pills-dropdown-content a:hover {
+    background-color: var(--hover);
+    color: var(--primary);
+  }
+
+  .nav-pills .nav-pills-dropdown .nav-pills-dropdown-content a.active {
+    background-color: var(--selected);
+    color: white;
+  }
+
+  /* Topic List */
+  .topic-list {
+    background-color: var(--secondary);
+  }
+
+  .topic-list .topic-list-item {
+    background-color: var(--highlight);
+    border: 1px solid var(--quaternary);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+  }
+
+  .topic-list .topic-list-item:hover {
+    border-color: var(--tertiary);
+    background-color: var(--hover);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    background-color: var(--highlight);
+    border-right: 1px solid var(--quaternary);
+  }
+
+  .sidebar .sidebar-section {
+    border-bottom: 1px solid var(--quaternary);
+  }
+
+  .sidebar .sidebar-section .sidebar-section-header {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .sidebar .sidebar-section .sidebar-section-content {
+    color: var(--primary);
+  }
+
+  /* Buttons */
+  .btn {
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .btn.btn-primary {
+    background-color: var(--selected);
+    color: white;
+    border-color: var(--selected);
+  }
+
+  .btn.btn-primary:hover {
+    background-color: var(--tertiary);
+    border-color: var(--tertiary);
+  }
+
+  .btn.btn-secondary {
+    background-color: var(--highlight);
+    color: var(--primary);
+    border-color: var(--quaternary);
+  }
+
+  .btn.btn-secondary:hover {
+    background-color: var(--hover);
+    border-color: var(--tertiary);
+  }
+
+  /* Cards and Panels */
+  .card {
+    background-color: var(--highlight);
+    border: 1px solid var(--quaternary);
+    border-radius: 12px;
+  }
+
+  .panel {
+    background-color: var(--highlight);
+    border: 1px solid var(--quaternary);
+    border-radius: 12px;
+  }
+
+  /* Forms and Inputs */
+  .form-control,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    background-color: var(--highlight);
+    border: 1px solid var(--quaternary);
+    color: var(--primary);
+    border-radius: 8px;
+  }
+
+  .form-control:focus,
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--tertiary);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+  }
+
+  /* Links */
+  a {
+    color: var(--tertiary);
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--selected);
+  }
+
+  /* Code Blocks */
+  pre {
+    background-color: var(--highlight);
+    border: 1px solid var(--quaternary);
+    color: var(--primary);
+    border-radius: 8px;
+  }
+
+  code {
+    background-color: var(--highlight);
+    color: var(--primary);
+    border: 1px solid var(--quaternary);
+    border-radius: 4px;
+  }
+
+  /* Tables */
+  table {
+    background-color: var(--highlight);
+    border: 1px solid var(--quaternary);
+    border-radius: 8px;
+  }
+
+  table th {
+    background-color: var(--quaternary);
+    color: var(--primary);
+    border-bottom: 1px solid var(--quaternary);
+  }
+
+  table td {
+    border-bottom: 1px solid var(--quaternary);
+    color: var(--primary);
+  }
+
+  /* Alerts */
+  .alert {
+    border-radius: 8px;
+    border: 1px solid;
+  }
+
+  .alert.alert-info {
+    background-color: var(--highlight);
+    border-color: var(--tertiary);
+    color: var(--tertiary);
+  }
+
+  .alert.alert-success {
+    background-color: var(--highlight);
+    border-color: var(--success);
+    color: var(--success);
+  }
+
+  .alert.alert-warning {
+    background-color: var(--highlight);
+    border-color: var(--love);
+    color: var(--love);
+  }
+
+  .alert.alert-error {
+    background-color: var(--highlight);
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+
+  /* Search */
+  .search-input {
+    background-color: var(--highlight);
+    border: 1px solid var(--quaternary);
+    color: var(--primary);
+    border-radius: 8px;
+  }
+
+  .search-input:focus {
+    border-color: var(--tertiary);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
   }
 
   /* Dropdowns */

@@ -1,7 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
 export default {
-  name: "dark-theme",
+  name: "theme-switcher",
   initialize() {
     withPluginApi("0.8.31", api => {
       // Function to apply dark theme
@@ -12,7 +12,7 @@ export default {
 
       // Function to apply light theme
       function applyLightTheme() {
-        document.documentElement.removeAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('discourse-theme', 'light');
       }
 
@@ -35,19 +35,21 @@ export default {
           const icon = button.querySelector('.theme-icon');
           if (icon) {
             if (currentTheme === 'dark') {
-              // Show moon icon for dark mode
-              icon.innerHTML = `
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                </svg>
-              `;
-            } else {
-              // Show sun icon for light mode
+              // Show moon icon for dark mode (switch to light)
               icon.innerHTML = `
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                 </svg>
               `;
+              button.setAttribute('title', 'Switch to light mode');
+            } else {
+              // Show sun icon for light mode (switch to dark)
+              icon.innerHTML = `
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+              `;
+              button.setAttribute('title', 'Switch to dark mode');
             }
           }
         }
@@ -73,22 +75,23 @@ export default {
           width: 40px;
           height: 40px;
           border-radius: 8px;
-          background-color: var(--btn-secondary-bg, #1e293b);
-          color: var(--btn-secondary-text, #e2e8f0);
-          border: 1px solid var(--card-border, #334155);
+          background-color: var(--highlight);
+          color: var(--primary);
+          border: 1px solid var(--quaternary);
           transition: all 0.2s ease;
           margin-left: 8px;
+          cursor: pointer;
         `;
         
         button.innerHTML = `
           <span class="theme-icon">
             ${currentTheme === 'dark' ? `
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
               </svg>
             ` : `
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
               </svg>
             `}
           </span>
@@ -96,12 +99,12 @@ export default {
         
         button.addEventListener('click', toggleTheme);
         button.addEventListener('mouseenter', () => {
-          button.style.backgroundColor = 'var(--btn-secondary-hover, #334155)';
-          button.style.borderColor = 'var(--primary, #2563eb)';
+          button.style.backgroundColor = 'var(--hover)';
+          button.style.borderColor = 'var(--tertiary)';
         });
         button.addEventListener('mouseleave', () => {
-          button.style.backgroundColor = 'var(--btn-secondary-bg, #1e293b)';
-          button.style.borderColor = 'var(--card-border, #334155)';
+          button.style.backgroundColor = 'var(--highlight)';
+          button.style.borderColor = 'var(--quaternary)';
         });
 
         // Try to find header buttons container

@@ -1,58 +1,144 @@
 /* Custom properties and their default values */
 :root {
   /* Layout */
-  // --d-max-width: 1110px;
-  // --canvas-nav-space: 0.75rem;
-  // --canvas-content-padding: 1.5rem;
-  // --canvas-topic-list-padding: 0.8em;
+  --d-max-width: 1110px;
+  --canvas-nav-space: 0.75rem;
+  --canvas-content-padding: 1.5rem;
+  --canvas-topic-list-padding: 0.8em;
 
   /* Base Styles */
-  // --canvas-background: var(--secondary);
-  // --canvas-surface: var(--secondary);
-  // --canvas-border: 1px solid var(--primary-500);
-  // --canvas-border-light: 1px solid var(--primary-200);
+  --canvas-background: var(--secondary);
+  --canvas-surface: var(--secondary);
+  --canvas-border: 1px solid var(--primary-500);
+  --canvas-border-light: 1px solid var(--primary-200);
 
   /* Border Radius */
-  // --d-border-radius: 2px;
-  // --d-border-radius-large: 2px;
-  // --d-button-border-radius: 2px;
-  // --d-input-border-radius: var(--d-button-border-radius);
-  // --d-nav-pill-border-radius: var(--d-button-border-radius);
+  --d-border-radius: 8px;
+  --d-border-radius-large: 12px;
+  --d-button-border-radius: 8px;
+  --d-input-border-radius: var(--d-button-border-radius);
+  --d-nav-pill-border-radius: var(--d-button-border-radius);
 
   /* Button Styles */
-  // --canvas-button-padding: 0.5em 0.65em;
-  // --canvas-button-primary-padding: 0.5em 0.65em;
+  --canvas-button-padding: 0.5em 0.65em;
+  --canvas-button-primary-padding: 0.5em 0.65em;
 
   /* Header */
-  // --canvas-header-height: 4rem;
-  // --canvas-header-background: var(--header_background);
-  // --canvas-header-border: none;
-  // --canvas-header-shadow: var(--shadow-header);
+  --canvas-header-height: 4rem;
+  --canvas-header-background: var(--header_background);
+  --canvas-header-border: none;
+  --canvas-header-shadow: var(--shadow-header);
 
   /* Sidebar */
-  // --d-sidebar-width: 17em;
-  // --d-sidebar-background: var(--secondary);
-  // --canvas-sidebar-border: 1px solid var(--primary-low);
-  // --canvas-sidebar-scrollbar: var(--scrollbarWidth);
-  // --d-sidebar-row-height: 2.2em;
-  // --d-sidebar-highlight-background: var(--primary-low);
+  --d-sidebar-width: 17em;
+  --d-sidebar-background: var(--secondary);
+  --canvas-sidebar-border: 1px solid var(--primary-low);
+  --canvas-sidebar-scrollbar: var(--scrollbarWidth);
+  --d-sidebar-row-height: 2.2em;
+  --d-sidebar-highlight-background: var(--primary-low);
 
   /* Panels */
-  // --canvas-panel-background: var(--secondary);
-  // --canvas-panel-padding: 1rem 2rem;
-  // --canvas-panel-radius: var(--d-border-radius-large);
-  // --canvas-panel-border: none;
-  // --canvas-panel-shadow: var(--shadow-header);
+  --canvas-panel-background: var(--secondary);
+  --canvas-panel-padding: 1rem 2rem;
+  --canvas-panel-radius: var(--d-border-radius-large);
+  --canvas-panel-border: none;
+  --canvas-panel-shadow: var(--shadow-header);
 
   /* Banners */
-  // --canvas-banner-color: var(--primary);
-  // --canvas-banner-background: var(--secondary);
-  // --canvas-banner-padding: 1rem 2rem 1.5rem;
-  // --canvas-banner-radius: var(--d-border-radius-large);
-  // --canvas-banner-border: none;
-  // --canvas-banner-shadow: var(--shadow-header);
+  --canvas-banner-color: var(--primary);
+  --canvas-banner-background: var(--secondary);
+  --canvas-banner-padding: 1rem 2rem 1.5rem;
+  --canvas-banner-radius: var(--d-border-radius-large);
+  --canvas-banner-border: none;
+  --canvas-banner-shadow: var(--shadow-header);
 
   /* Header Search */
-  // --canvas-header-search-padding: 0.5em;
-  // --canvas-header-search-border: 1px solid var(--primary-400);
+  --canvas-header-search-padding: 0.5em;
+  --canvas-header-search-border: 1px solid var(--primary-400);
+}
+
+/* BeQuant Dark Mode Colors */
+[data-theme="dark"] {
+  /* Primary Colors - Matching BeQuant */
+  --primary: #2563eb; /* Indigo-600 */
+  --primary-low: #1e40af; /* Indigo-700 */
+  --primary-medium: #3b82f6; /* Indigo-500 */
+  --primary-high: #60a5fa; /* Indigo-400 */
+  --primary-50: #eff6ff; /* Indigo-50 */
+  --primary-100: #dbeafe; /* Indigo-100 */
+  --primary-200: #bfdbfe; /* Indigo-200 */
+  --primary-300: #93c5fd; /* Indigo-300 */
+  --primary-400: #60a5fa; /* Indigo-400 */
+  --primary-500: #3b82f6; /* Indigo-500 */
+  --primary-600: #2563eb; /* Indigo-600 */
+  --primary-700: #1d4ed8; /* Indigo-700 */
+  --primary-800: #1e40af; /* Indigo-800 */
+  --primary-900: #1e3a8a; /* Indigo-900 */
+
+  /* Background Colors - Matching BeQuant Dark Theme */
+  --primary-dark: #0f172a; /* Slate-900 - Main dark background */
+  --secondary: #0f172a; /* Slate-900 */
+  --highlight: #1e293b; /* Slate-800 */
+  --tertiary: #334155; /* Slate-700 */
+  --quaternary: #475569; /* Slate-600 */
+
+  /* Text Colors */
+  --primary-text: #f8fafc; /* Slate-50 */
+  --secondary-text: #e2e8f0; /* Slate-200 */
+  --tertiary-text: #cbd5e1; /* Slate-300 */
+  --quaternary-text: #94a3b8; /* Slate-400 */
+
+  /* Border Colors */
+  --primary-low-mid: #475569; /* Slate-600 */
+  --primary-low: #334155; /* Slate-700 */
+  --primary-medium: #1e293b; /* Slate-800 */
+  --primary-high: #0f172a; /* Slate-900 */
+
+  /* Header */
+  --header_background: #0f172a; /* Slate-900 */
+  --header_primary: #f8fafc; /* Slate-50 */
+  --header_primary_low: #e2e8f0; /* Slate-200 */
+
+  /* Navigation */
+  --nav-pill-background: #1e293b; /* Slate-800 */
+  --nav-pill-hover: #334155; /* Slate-700 */
+  --nav-pill-active: #2563eb; /* Indigo-600 */
+
+  /* Buttons */
+  --btn-primary-bg: #2563eb; /* Indigo-600 */
+  --btn-primary-hover: #1d4ed8; /* Indigo-700 */
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #1e293b; /* Slate-800 */
+  --btn-secondary-hover: #334155; /* Slate-700 */
+  --btn-secondary-text: #e2e8f0; /* Slate-200 */
+
+  /* Cards and Panels */
+  --card-bg: #1e293b; /* Slate-800 */
+  --card-border: #334155; /* Slate-700 */
+  --panel-bg: #1e293b; /* Slate-800 */
+  --panel-border: #334155; /* Slate-700 */
+
+  /* Code Blocks */
+  --code-bg: #1e293b; /* Slate-800 */
+  --code-text: #e2e8f0; /* Slate-200 */
+  --code-border: #334155; /* Slate-700 */
+
+  /* Links */
+  --link: #60a5fa; /* Indigo-400 */
+  --link-hover: #93c5fd; /* Indigo-300 */
+
+  /* Success/Error/Info Colors */
+  --success: #10b981; /* Emerald-500 */
+  --success-low: #065f46; /* Emerald-800 */
+  --danger: #ef4444; /* Red-500 */
+  --danger-low: #7f1d1d; /* Red-800 */
+  --warning: #f59e0b; /* Amber-500 */
+  --warning-low: #92400e; /* Amber-800 */
+  --info: #3b82f6; /* Blue-500 */
+  --info-low: #1e40af; /* Blue-800 */
+
+  /* Shadows */
+  --shadow-header: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-dropdown: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }

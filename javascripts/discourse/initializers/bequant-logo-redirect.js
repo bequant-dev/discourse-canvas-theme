@@ -11,17 +11,25 @@ export default {
         logoLinks.forEach(link => {
           // Change href to bequant.dev
           link.href = "https://bequant.dev";
-          link.target = "_blank"; // Open in new tab
-          link.rel = "noopener noreferrer"; // Security best practice
+          // Remove target="_blank" to open in same page
+          link.removeAttribute('target');
+          link.removeAttribute('rel');
           
           // Add title for accessibility
           link.title = "Go to BeQuant.dev";
           
-          // Add click event listener as backup
-          link.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.open('https://bequant.dev', '_blank');
-          });
+          // Replace the content with BeQuant text
+          link.innerHTML = '<span style="font-family: Inter, -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, sans-serif; font-size: 1.5rem; font-weight: 700; color: #2563eb; letter-spacing: -0.025em;">BeQuant</span>';
+          
+                      // Add click event listener as backup (only once)
+            if (!link.hasAttribute('data-bequant-redirect-added')) {
+              link.setAttribute('data-bequant-redirect-added', 'true');
+              link.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.href = 'https://bequant.dev';
+              });
+            }
         });
       }
 

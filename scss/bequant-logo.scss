@@ -24,17 +24,11 @@
   top: -9999px !important;
 }
 
-/* Create BeQuant text logo */
-.header .title::before,
-.home-logo-wrapper-outlet .title::before {
-  content: "BeQuant";
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--tertiary);
-  letter-spacing: -0.025em;
-  display: block;
-  line-height: 1;
+/* Ensure the logo link is properly styled */
+.home-logo-wrapper-outlet .title a,
+.header .title a {
+  text-decoration: none !important;
+  display: inline-block !important;
 }
 
 /* Alternative approach - replace the entire title element */
@@ -88,9 +82,10 @@
 /* Make sure the link area is properly sized */
 .home-logo-wrapper-outlet .title a,
 .header .title a {
-  min-height: 40px !important;
-  min-width: 120px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
+  display: inline-block !important;
+  position: relative !important;
+  text-decoration: none !important;
+  /* Remove the large clickable area */
+  min-height: auto !important;
+  min-width: auto !important;
 } 

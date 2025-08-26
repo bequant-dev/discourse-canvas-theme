@@ -5,6 +5,26 @@
 @import "hide-sidebar-elements";
 @import "bequant-logo";
 
+/* Hide signup button for non-logged in users */
+body:not(.logged-in) {
+  .sign-up-button,
+  .btn-sign-up,
+  .signup-button,
+  .btn-signup,
+  [data-name="sign-up"],
+  [data-name="signup"],
+  .header-sign-up,
+  .nav-sign-up,
+  .sign-up-link,
+  .signup-link,
+  a[href*="/signup"],
+  a[href*="/sign-up"],
+  .btn[href*="/signup"],
+  .btn[href*="/sign-up"] {
+    display: none !important;
+  }
+}
+
 /* Dark Mode Overrides */
 [data-theme="dark"] {
   /* Global Background */

@@ -3,7 +3,37 @@
 /* Import properties */
 @import "properties";
 @import "hide-sidebar-elements";
-@import "bequant-logo";
+
+/* Logo styling - make it fit inside header and redirect to bequant.dev */
+.home-logo-wrapper-outlet {
+  .title {
+    a {
+      display: block;
+      
+      /* Make logo fit inside header */
+      img#site-logo.logo-big {
+        max-height: 40px !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain;
+      }
+      
+      /* Redirect to bequant.dev */
+      &[href="/"] {
+        pointer-events: auto;
+        
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/* JavaScript-free redirect using CSS pointer events */
+.home-logo-wrapper-outlet .title a[href="/"] {
+  pointer-events: auto;
+}
 
 /* Hide signup button for non-logged in users */
 body:not(.logged-in) {

@@ -10,27 +10,14 @@ export default {
         localStorage.setItem('discourse-theme', 'dark');
       }
 
-      // Initialize theme on page load
-      api.onPageChange(() => {
-        // Always apply dark theme
-        applyDarkTheme();
-      });
-
-      // Also run on initial load
-      api.decorateCooked($elem => {
-        applyDarkTheme();
-      });
-
       // Apply dark theme by default
       applyDarkTheme();
 
-      // Additional attempts on DOM ready
+      // Additional attempt on DOM ready if needed
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           applyDarkTheme();
         });
-      } else {
-        applyDarkTheme();
       }
     });
   }

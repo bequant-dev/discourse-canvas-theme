@@ -9,7 +9,6 @@ export default {
         const logoLink = document.querySelector('.home-logo-wrapper-outlet .title a[href="/"]');
         if (logoLink) {
           logoLink.href = 'https://bequant.dev';
-          logoLink.setAttribute('target', '_blank'); // Open in new tab
         }
       };
 

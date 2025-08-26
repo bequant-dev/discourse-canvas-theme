@@ -1,82 +1,54 @@
-/* Replace Discourse logo with BeQuant text logo */
+/* Show and style the BeQuant logo */
 
-/* Hide the original Discourse logo */
+/* Show the original Discourse logo (your uploaded BeQuant PNG) */
 .header .title,
 .header .logo,
-.header .logo img,
-.header .logo svg,
 .header .title img,
-.header .title svg,
-.header .logo .d-icon,
-.header .title .d-icon,
+.header .logo img,
 #site-logo,
 .logo-big,
 .home-logo-wrapper-outlet img,
 .home-logo-wrapper-outlet .logo-big,
 .home-logo-wrapper-outlet #site-logo {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  position: absolute !important;
-  left: -9999px !important;
-  top: -9999px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
 }
 
-/* Ensure the logo link is properly styled */
+/* Ensure the logo link is properly styled and clickable */
 .home-logo-wrapper-outlet .title a,
 .header .title a {
   text-decoration: none !important;
   display: inline-block !important;
-}
-
-/* Alternative approach - replace the entire title element */
-.header .title {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  color: var(--tertiary) !important;
-  letter-spacing: -0.025em !important;
-  text-decoration: none !important;
-}
-
-/* Ensure the logo is clickable and links to home */
-.header .title {
+  visibility: visible !important;
+  opacity: 1 !important;
   cursor: pointer !important;
-  transition: color 0.2s ease !important;
 }
 
-.header .title:hover {
-  color: var(--selected) !important;
+/* Style the title element to be visible */
+.header .title {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
 }
 
-/* Remove any existing text content */
-.header .title span,
-.header .title a {
-  display: none !important;
-}
-
-/* Redirect BeQuant logo to bequant.dev */
-.home-logo-wrapper-outlet .title a,
-.header .title a {
-  pointer-events: auto !important;
-}
-
-.home-logo-wrapper-outlet .title a[href="/"],
-.header .title a[href="/"] {
-  pointer-events: auto !important;
-}
-
-/* Ensure logo links are clickable */
+/* Ensure logo links are clickable and visible */
 .home-logo-wrapper-outlet .title a,
 .header .title a {
   pointer-events: auto !important;
   cursor: pointer !important;
-  display: block !important;
+  display: inline-block !important;
   position: relative !important;
   z-index: 10 !important;
   text-decoration: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Make sure the link area is properly sized */
@@ -85,7 +57,6 @@
   display: inline-block !important;
   position: relative !important;
   text-decoration: none !important;
-  /* Remove the large clickable area */
   min-height: auto !important;
   min-width: auto !important;
 } 

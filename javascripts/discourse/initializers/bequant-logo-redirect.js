@@ -8,7 +8,12 @@ export default {
         // Find all logo links
         const logoLinks = document.querySelectorAll('.home-logo-wrapper-outlet .title a, .header .title a');
         
-        logoLinks.forEach(link => {
+        logoLinks.forEach((link, index) => {
+          // Only process if not already processed
+          if (link.hasAttribute('data-bequant-redirect-added')) {
+            return;
+          }
+          
           // Change href to bequant.dev
           link.href = "https://bequant.dev";
           // Remove target="_blank" to open in same page
@@ -18,36 +23,29 @@ export default {
           // Add title for accessibility
           link.title = "Go to BeQuant.dev";
           
-          // Replace the content with BeQuant text
-          link.innerHTML = '<span style="font-family: Inter, -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, sans-serif; font-size: 1.5rem; font-weight: 700; color: #2563eb; letter-spacing: -0.025em;">BeQuant</span>';
+          // Keep the original logo image, just redirect the link
+          // Don't replace the innerHTML - keep the uploaded PNG
           
-                      // Add click event listener as backup (only once)
-            if (!link.hasAttribute('data-bequant-redirect-added')) {
-              link.setAttribute('data-bequant-redirect-added', 'true');
-              link.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                window.location.href = 'https://bequant.dev';
-              });
-            }
+          // Add click event listener as backup (only once)
+          link.setAttribute('data-bequant-redirect-added', 'true');
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = 'https://bequant.dev';
+          });
         });
       }
 
-      // Run on page load
+      // Run only once on page load - no observers or page change events
       redirectBeQuantLogo();
       
-      // Run on page changes
-      api.onPageChange(() => {
-        setTimeout(redirectBeQuantLogo, 100);
-      });
-      
-      // Run when content is loaded
-      api.decorateCooked($elem => {
-        setTimeout(redirectBeQuantLogo, 100);
-      });
-      
-      // Run periodically to catch any dynamically added logos
-      setInterval(redirectBeQuantLogo, 2000);
+      // Also run when the page is ready to ensure logo appears
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', redirectBeQuantLogo);
+      } else {
+        // Page is already loaded, run immediately
+        redirectBeQuantLogo();
+      }
     });
   }
 }; 

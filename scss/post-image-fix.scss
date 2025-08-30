@@ -1,0 +1,39 @@
+/* Minimal fix for images disappearing after posting */
+
+/* Force images in posts to be visible */
+.cooked img,
+.topic-body img,
+.post-message img,
+.post img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ensure image containers are visible */
+.cooked,
+.topic-body,
+.post-message {
+  img {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+
+/* Fix for lazy-loaded images that get stuck */
+img[loading="lazy"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Override any Discourse hiding */
+img[style*="display: none"],
+img[style*="visibility: hidden"],
+img[style*="opacity: 0"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}

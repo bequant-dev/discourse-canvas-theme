@@ -1,1 +1,88 @@
+# BeQuant Discourse Theme Settings
 
+# Site Settings
+site_logo_url: "https://bequant.dev/Logo%20with%20Name%20-%20Dark.png"
+site_logo_small_url: "https://bequant.dev/icon.png"
+site_favicon_url: "https://bequant.dev/favicon.ico"
+site_apple_touch_icon_url: "https://bequant.dev/apple-touch-icon.png"
+
+# Default Open Graph Image
+default_opengraph_image: "https://bequant.dev/og-image-dark.png"
+
+# Topic Thumbnail Settings
+topic_thumbnail_enabled: true
+topic_thumbnail_width: 400
+topic_thumbnail_height: 300
+
+# Category Settings
+category_thumbnail_enabled: true
+category_thumbnail_width: 300
+category_thumbnail_height: 200
+
+# User Avatar Settings
+user_avatar_enabled: true
+user_avatar_width: 120
+user_avatar_height: 120
+
+# Email Settings
+email_logo_url: "https://bequant.dev/Logo%20with%20Name%20-%20Dark.png"
+email_logo_width: 200
+email_logo_height: 60
+
+# Social Media Settings
+twitter_summary_large_image: true
+twitter_creator: "@bequant_dev"
+twitter_site: "@bequant_dev"
+
+# Meta Tags
+meta_description: "BeQuant - Where quants are made. Learn quantitative finance, programming, and interview preparation."
+meta_keywords: "quantitative finance, quant interview prep, programming, C++, Python, system design, probability, statistics"
+
+# Theme Colors
+theme_primary_color: "#2563eb"
+theme_secondary_color: "#030712"
+theme_accent_color: "#38bdf8"
+
+# Custom CSS for better image handling
+custom_css: |
+  /* Ensure proper image display */
+  .topic-thumbnail {
+    background-color: #111827;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .topic-thumbnail img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Fallback for missing images */
+  .topic-thumbnail:empty::before {
+    content: "📊";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    background-color: #1f2937;
+    color: #6b7280;
+    font-size: 48px;
+  }
+  
+  /* Category thumbnails */
+  .category-box-inner {
+    background-color: #111827;
+    border: 1px solid #374151;
+    border-radius: 12px;
+  }
+  
+  .category-box-inner .category-box-inner-heading {
+    color: #ffffff;
+  }
+  
+  .category-box-inner .description {
+    color: #d1d5db;
+  }
